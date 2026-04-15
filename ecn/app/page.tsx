@@ -1,16 +1,17 @@
 import React from 'react';
+import Link from 'next/link';
 import { Insight, INSIGHT_MOCKS, FUTURE_TOPICS } from '@/lib/data';
 
 export default function Home() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <main className="flex min-h-screen flex-col items-center px-6 py-24 md:px-24">
-      {/* Navigation (Minimaliste) */}
+      {/* Navigation (Épurée) */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between border-b border-slate-900 bg-slate-950/80 px-6 backdrop-blur-md md:px-24">
-        <div className="text-lg font-bold tracking-tight text-slate-100 italic">ECN</div>
+        <Link href="/" className="text-lg font-bold tracking-tight text-slate-100 italic">ECN</Link>
         <div className="flex gap-8 text-sm font-medium text-slate-400">
-          <a href="#" className="transition-colors hover:text-cyan-400">Recherche</a>
-          <a href="#" className="transition-colors hover:text-cyan-400">Réseau</a>
-          <a href="#" className="transition-colors hover:text-cyan-400">Deeptech</a>
+          <Link href="/" className="transition-colors hover:text-cyan-400">Recherche</Link>
         </div>
       </nav>
 
@@ -20,7 +21,7 @@ export default function Home() {
           ECN Research
         </h1>
         <p className="max-w-xl text-lg text-slate-400 md:text-xl">
-          Intelligence Technologique & Données pour le Capital Privé. Spécialiste du Private Equity et de la Deeptech.
+          Intelligence Technologique & Données pour le Capital Privé (Growth & LBO).
         </p>
       </section>
 
@@ -29,18 +30,11 @@ export default function Home() {
         <div className="border-l-2 border-cyan-500/50 pl-8 md:pl-12">
           <h2 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">Notre Thèse</h2>
           <p className="max-w-3xl text-2xl font-light leading-relaxed text-slate-300 md:text-3xl">
-            L'asymétrie d'information entre l'innovation technique pure (deeptech) et l'allocation de capital 
+            L'asymétrie d'information entre l'innovation technique et l'allocation de capital 
             financier reste le principal frein à l'efficacité du Private Equity. <span className="text-slate-100 font-normal">ECN comble ce fossé</span> par une recherche indépendante 
-            rigoureuse, mêlant expertise d'ingénierie et modélisation financière de pointe.
+            rigoureuse, mêlant expertise sectorielle et modélisation financière de pointe.
           </p>
         </div>
-      </section>
-
-      {/* Section Manifesto / Vision (Section complémentaire) */}
-      <section className="flex w-full max-w-5xl flex-col py-16 opacity-80">
-        <p className="max-w-2xl text-lg text-slate-400 leading-relaxed italic">
-          "Nous ne voyons pas la Deeptech comme un risque, mais comme une série de primitives technologiques dont la valeur est souvent mal estimée par les méthodes traditionnelles de valorisation."
-        </p>
       </section>
 
       {/* Latest Insights Section */}
@@ -73,12 +67,9 @@ export default function Home() {
       {/* Footer */}
       <footer className="mt-auto w-full max-w-5xl border-t border-slate-900 py-12 text-sm text-slate-500">
         <div className="flex flex-col justify-between gap-8 md:flex-row">
-          <div>© 2024 EPI Capital Network. Boutique de Recherche Indépendante.</div>
-          <div className="flex items-center gap-8">
-            <a href="#" className="hover:text-slate-300 transition-colors">Politique de Confidentialité</a>
-            <a href="#" className="hover:text-slate-300 transition-colors">Contact</a>
-            <span className="text-slate-800">|</span>
-            <a href="#" className="text-xs text-slate-500 hover:text-slate-200 transition-colors">Connexion Analyste</a>
+          <div>© {currentYear} EPI Capital Network. Boutique de Recherche Indépendante.</div>
+          <div className="flex items-center gap-8.5">
+            <span className="text-xs text-slate-600 block">Accès Privé</span>
           </div>
         </div>
       </footer>
@@ -103,12 +94,15 @@ function InsightCard({ insight }: { insight: Insight }) {
           {insight.excerpt}
         </p>
       </div>
-      <button className="mt-auto flex items-center text-xs font-bold uppercase tracking-widest text-slate-400 transition-colors hover:text-cyan-400">
+      <Link 
+        href={`/research/${insight.slug}`}
+        className="mt-auto flex items-center text-xs font-bold uppercase tracking-widest text-slate-400 transition-colors hover:text-cyan-400"
+      >
         Lire l'Analyse
         <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
         </svg>
-      </button>
+      </Link>
     </div>
   );
 }
