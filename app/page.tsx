@@ -1,75 +1,131 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
+import { motion, Variants } from 'framer-motion';
+import { ArrowUpRight, Diamond, BookOpen, ChevronRight, Binary } from 'lucide-react';
 import { Insight, INSIGHT_MOCKS, FUTURE_TOPICS } from '@/lib/data';
+import { cn } from '@/lib/utils';
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
 
+  // Animation variants
+  const fadeIn: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+  
+  const staggerContainer: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
   return (
     <main className="flex min-h-screen flex-col items-center px-6 py-24 md:px-24">
-      {/* Navigation (Épurée) */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between border-b border-slate-900 bg-slate-950/80 px-6 backdrop-blur-md md:px-24">
-        <Link href="/" className="text-lg font-bold tracking-tight text-slate-100 italic">ECN</Link>
+      {/* Navigation (Premium Glass) */}
+      <nav className="fixed top-0 left-0 right-0 z-50 flex h-20 items-center justify-between border-b border-slate-800/50 bg-slate-950/70 px-6 backdrop-blur-xl md:px-24 transition-all duration-300">
+        <Link href="/" className="group flex items-center gap-2 text-xl font-bold tracking-tighter text-slate-100 font-serif">
+          <Diamond className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+          <span className="italic tracking-widest uppercase">ECN</span>
+        </Link>
         <div className="flex gap-8 text-sm font-medium text-slate-400">
-          <Link href="/" className="transition-colors hover:text-cyan-400">Recherche</Link>
+          <Link href="/" className="transition-colors hover:text-cyan-400 flex items-center gap-1">
+            <BookOpen className="w-4 h-4" />
+            Recherche
+          </Link>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="mt-20 flex w-full max-w-5xl flex-col items-start gap-4 py-20">
-        <h1 className="text-5xl font-bold tracking-tighter text-slate-50 md:text-7xl">
-          ECN Research
-        </h1>
-        <p className="max-w-xl text-lg text-slate-400 md:text-xl">
-          Intelligence Technologique & Données pour le Capital Privé (Growth & LBO).
-        </p>
+      <section className="mt-24 flex w-full max-w-5xl flex-col items-start gap-6 py-24 relative">
+        <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+          <div className="mb-6 inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-400 backdrop-blur-sm">
+            <span className="flex h-2 w-2 rounded-full bg-cyan-400 mr-2 animate-pulse"></span>
+            Independent Deeptech Boutique
+          </div>
+          <h1 className="text-5xl font-serif font-semibold tracking-tight text-slate-50 md:text-7xl leading-tight">
+            ECN Research <br />
+            <span className="text-slate-500 font-sans font-light tracking-tighter">Technology Capital.</span>
+          </h1>
+          <p className="max-w-2xl text-lg text-slate-400 md:text-xl mt-6 font-light leading-relaxed">
+            Intelligence technologique & données qualitatives exhaustives pour le financement en Private Equity (Growth & LBO).
+          </p>
+        </motion.div>
       </section>
 
-      {/* Section 'Notre Thèse / À propos' */}
-      <section className="flex w-full max-w-5xl flex-col py-16">
-        <div className="border-l-2 border-cyan-500/50 pl-8 md:pl-12">
-          <h2 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">Notre Thèse</h2>
-          <p className="max-w-3xl text-2xl font-light leading-relaxed text-slate-300 md:text-3xl">
+      {/* Section 'Notre Thèse' */}
+      <section className="flex w-full max-w-5xl flex-col py-20 relative">
+        <motion.div 
+          initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
+          className="relative border-l border-cyan-500/40 pl-8 md:pl-12"
+        >
+          <div className="absolute -left-[5px] top-0 h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_10px_2px_rgba(34,211,238,0.5)]"></div>
+          <h2 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-cyan-400 flex items-center gap-2">
+            <Binary className="w-4 h-4" /> Notre Thèse
+          </h2>
+          <p className="max-w-4xl text-2xl font-light leading-relaxed text-slate-300 md:text-4xl font-serif">
             L'asymétrie d'information entre l'innovation technique et l'allocation de capital 
-            financier reste le principal frein à l'efficacité du Private Equity. <span className="text-slate-100 font-normal">ECN comble ce fossé</span> par une recherche indépendante 
-            rigoureuse, mêlant expertise sectorielle et modélisation financière de pointe.
+            financier reste le principal frein à l'efficacité du Private Equity. <span className="text-white font-normal bg-gradient-to-r from-slate-100 to-slate-400 bg-clip-text text-transparent">ECN comble ce fossé</span> par une recherche indépendante 
+            rigoureuse, mêlant expertise sectorielle et modélisation pointue.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Latest Insights Section */}
-      <section className="flex w-full max-w-5xl flex-col gap-12 py-20">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">Dernières Analyses</h2>
-          <div className="h-px flex-1 bg-slate-900 ml-8"></div>
-        </div>
+      <section className="flex w-full max-w-5xl flex-col gap-12 py-24">
+        <motion.div 
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
+          className="flex items-center justify-between"
+        >
+          <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-300">Dernières Analyses</h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-slate-800 to-transparent ml-8"></div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <motion.div 
+          variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 gap-6 md:grid-cols-3"
+        >
           {INSIGHT_MOCKS.map((insight) => (
-            <InsightCard key={insight.id} insight={insight} />
+            <motion.div key={insight.id} variants={fadeIn} className="h-full">
+              <InsightCard insight={insight} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
-      {/* Section 'Sujets à l'étude' (Suggestions) */}
-      <section className="flex w-full max-w-5xl flex-col gap-8 py-16 border-t border-slate-900/50">
+      {/* Section 'Sujets à l'étude' */}
+      <section className="flex w-full max-w-5xl flex-col gap-8 py-20 border-t border-slate-800/50">
         <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Sujets à l'étude (Futures Analyses)</h2>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-3">
           {FUTURE_TOPICS.map((topic, index) => (
-            <div key={index} className="flex items-center gap-2 rounded-full border border-slate-900 bg-slate-950 px-4 py-2 text-sm text-slate-400 italic">
-              <span className="h-1.5 w-1.5 rounded-full bg-cyan-500/40"></span>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} 
+              transition={{ delay: index * 0.05 }} viewport={{ once: true }}
+              key={index} 
+              className="group flex items-center gap-2 rounded-full border border-slate-800/80 bg-slate-900/50 px-5 py-2 text-sm text-slate-300 backdrop-blur-sm transition-all hover:border-cyan-500/50 hover:bg-slate-800"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-500/40 group-hover:bg-cyan-400 transition-colors"></span>
               {topic}
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="mt-auto w-full max-w-5xl border-t border-slate-900 py-12 text-sm text-slate-500">
-        <div className="flex flex-col justify-between gap-8 md:flex-row">
-          <div>© {currentYear} EPI Capital Network. Boutique de Recherche Indépendante.</div>
-          <div className="flex items-center gap-8.5">
-            <span className="text-xs text-slate-600 block">Accès Privé</span>
+      <footer className="mt-auto w-full max-w-5xl border-t border-slate-800/50 py-12 text-sm text-slate-500">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
+          <div className="flex items-center gap-2">
+            <Diamond className="w-4 h-4 text-slate-700" />
+            <span>© {currentYear} EPI Capital Network. Boutique Indépendante.</span>
+          </div>
+          <div className="flex items-center gap-8">
+            <Link href="/" className="text-xs uppercase tracking-widest text-slate-500 hover:text-cyan-400 transition-colors">
+              Accès Privé
+            </Link>
           </div>
         </div>
       </footer>
@@ -79,30 +135,35 @@ export default function Home() {
 
 function InsightCard({ insight }: { insight: Insight }) {
   return (
-    <div className="group flex flex-col gap-6 border border-slate-900 bg-slate-950 p-8 transition-all hover:border-slate-800 hover:bg-slate-900/40">
-      <div className="flex items-center justify-between">
-        <span className="text-xs font-medium text-slate-500">{insight.date}</span>
-        <span className="rounded-full border border-slate-800 bg-slate-900 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-cyan-400">
-          {insight.tag}
-        </span>
+    <Link href={`/research/${insight.slug}`} className="block h-full group">
+      <div className={cn(
+        "flex flex-col gap-6 h-full p-8 rounded-xl",
+        "glass-card glass-card-hover relative overflow-hidden"
+      )}>
+        {/* Subtle glow effect on hover inside card */}
+        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 rounded-full bg-cyan-500/10 blur-2xl group-hover:bg-cyan-500/20 transition-colors duration-500"></div>
+        
+        <div className="flex items-center justify-between relative z-10">
+          <span className="text-xs font-medium text-slate-500 font-mono tracking-tight">{insight.date}</span>
+          <span className="rounded-full border border-slate-700/80 bg-slate-800/80 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-cyan-400 drop-shadow-sm">
+            {insight.tag}
+          </span>
+        </div>
+        
+        <div className="relative z-10 flex-1">
+          <h3 className="mb-4 text-xl font-serif font-semibold leading-snug text-slate-200 transition-colors group-hover:text-white">
+            {insight.title}
+          </h3>
+          <p className="text-sm text-slate-400 line-clamp-3 leading-relaxed">
+            {insight.excerpt}
+          </p>
+        </div>
+        
+        <div className="mt-auto pt-4 flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 transition-all group-hover:text-cyan-400 relative z-10">
+          Lire l'Analyse
+          <ChevronRight className="ml-2 w-4 h-4 text-slate-600 transition-all group-hover:translate-x-1 group-hover:text-cyan-400" />
+        </div>
       </div>
-      <div>
-        <h3 className="mb-3 text-xl font-semibold leading-snug text-slate-200 transition-colors group-hover:text-slate-50">
-          {insight.title}
-        </h3>
-        <p className="text-sm text-slate-500 line-clamp-2 leading-relaxed">
-          {insight.excerpt}
-        </p>
-      </div>
-      <Link 
-        href={`/research/${insight.slug}`}
-        className="mt-auto flex items-center text-xs font-bold uppercase tracking-widest text-slate-400 transition-colors hover:text-cyan-400"
-      >
-        Lire l'Analyse
-        <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-        </svg>
-      </Link>
-    </div>
+    </Link>
   );
 }
