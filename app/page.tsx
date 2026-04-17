@@ -45,7 +45,7 @@ export default function Home() {
           <span className="italic tracking-widest uppercase">ECN</span>
         </Link>
         <div className="flex gap-8 text-sm font-medium text-slate-400">
-          <Link href="/" className="transition-colors hover:text-cyan-400 flex items-center gap-1">
+          <Link href="#search" className="transition-colors hover:text-cyan-400 flex items-center gap-1">
             <BookOpen className="w-4 h-4" />
             Recherche
           </Link>
@@ -99,9 +99,10 @@ export default function Home() {
           </div>
           
           {/* Search Bar */}
-          <div className="relative w-full md:w-72 shrink-0">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+          <div className="relative w-full md:w-72 shrink-0 group">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 group-focus-within:text-cyan-400 transition-colors" />
             <input 
+              id="search"
               type="text" 
               placeholder="Rechercher une thématique..." 
               value={searchQuery}
