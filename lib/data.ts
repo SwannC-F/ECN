@@ -5,6 +5,10 @@ export interface Insight {
   tag: string;
   excerpt: string;
   slug: string;
+  pdfs?: {
+    fr?: string;
+    en?: string;
+  };
 }
 
 export const INSIGHT_MOCKS: Insight[] = [
@@ -15,6 +19,10 @@ export const INSIGHT_MOCKS: Insight[] = [
     tag: "Infrastructure",
     excerpt: "Analyse des modèles de rendement sur les actifs réels liés à l'IA et au cloud souverain.",
     slug: "infrastructure-data-center-edge",
+    pdfs: {
+      fr: "/reports/infrastructure-data-center-fr.pdf",
+      en: "/reports/infrastructure-data-center-en.pdf"
+    }
   },
   {
     id: "2",

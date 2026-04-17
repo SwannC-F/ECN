@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { INSIGHT_MOCKS } from '@/lib/data';
 import { Calendar, Tag, ChevronLeft } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import DocumentPanel from '@/components/PdfViewer';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -58,17 +58,22 @@ export default async function ResearchPage({ params }: PageProps) {
           </h1>
         </header>
 
-        <div className="glass-card p-8 rounded-xl border border-cyan-500/30 text-center relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-500/10 blur-3xl -ml-10 -mt-10"></div>
-          <p className="text-lg font-medium text-cyan-400 relative z-10">
-            Archive complète disponible : <span className="text-white">Printemps 2026</span>
-          </p>
-          <p className="mt-3 text-sm text-slate-400 leading-relaxed max-w-xl mx-auto relative z-10">
-            Nos rapports de recherche détaillés sont actuellement en cours de finalisation et seront distribués exclusivement à notre réseau institutionnel.
-          </p>
-        </div>
+        {/* Dynamic Document Panel */}
+        {insight.pdfs ? (
+          <DocumentPanel files={insight.pdfs} />
+        ) : (
+          <div className="glass-card p-8 rounded-xl border border-cyan-500/30 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-500/10 blur-3xl -ml-10 -mt-10"></div>
+            <p className="text-lg font-medium text-cyan-400 relative z-10">
+              Archive complète disponible : <span className="text-white">Printemps 2026</span>
+            </p>
+            <p className="mt-3 text-sm text-slate-400 leading-relaxed max-w-xl mx-auto relative z-10">
+              Nos rapports de recherche détaillés sont actuellement en cours de finalisation et seront distribués exclusivement à notre réseau institutionnel.
+            </p>
+          </div>
+        )}
 
-        <div className="flex flex-col gap-8 text-slate-300 leading-relaxed font-light text-lg">
+        <div className="flex flex-col gap-8 text-slate-300 leading-relaxed font-light text-lg mt-4">
           <p className="text-xl text-slate-200 font-medium">{insight.excerpt}</p>
           <div className="w-12 h-px bg-slate-800"></div>
           <p>

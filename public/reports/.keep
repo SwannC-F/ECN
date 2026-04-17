@@ -1,0 +1,2 @@
+This directory contains static PDF reports for the ECN Research portal.
+Place your .pdf files here (e.g. 'my-report-fr.pdf') and reference them in 'lib/data.ts'.
