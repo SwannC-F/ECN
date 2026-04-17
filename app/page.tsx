@@ -29,8 +29,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="mt-24 flex w-full max-w-5xl flex-col items-start gap-6 py-24 relative">
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-          <div className="mb-6 inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-400 backdrop-blur-sm">
-            <span className="flex h-2 w-2 rounded-full bg-cyan-400 mr-2 animate-pulse"></span>
+          <div className="mb-6 inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400 backdrop-blur-sm">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
             Independent Deeptech Boutique
           </div>
           <h1 className="text-5xl font-serif font-semibold tracking-tight text-slate-50 md:text-7xl leading-tight">
@@ -41,7 +41,7 @@ export default function Home() {
             Intelligence technologique & données qualitatives exhaustives pour le financement en Private Equity (Growth & LBO).
           </p>
           <div className="mt-8 flex gap-4">
-            <Link href="#analyses" className="flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-950 bg-cyan-400 hover:bg-cyan-300 px-6 py-3 rounded-full transition-colors">
+            <Link href="#analyses" className="flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-950 bg-emerald-400 hover:bg-emerald-300 px-6 py-3 rounded-full transition-colors">
               Parcourir nos analyses
             </Link>
           </div>
@@ -52,10 +52,10 @@ export default function Home() {
       <section className="flex w-full max-w-5xl flex-col py-20 relative">
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
-          className="relative border-l border-cyan-500/40 pl-8 md:pl-12"
+          className="relative border-l border-emerald-500/40 pl-8 md:pl-12"
         >
-          <div className="absolute -left-[5px] top-0 h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_10px_2px_rgba(34,211,238,0.5)]"></div>
-          <h2 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-cyan-400 flex items-center gap-2">
+          <div className="absolute -left-[5px] top-0 h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_2px_rgba(52,211,153,0.5)]"></div>
+          <h2 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-emerald-400 flex items-center gap-2">
             <Binary className="w-4 h-4" /> Notre Thèse
           </h2>
           <p className="max-w-4xl text-2xl font-light leading-relaxed text-slate-300 md:text-4xl font-serif">
@@ -94,7 +94,7 @@ export default function Home() {
         </motion.div>
         
         <div className="mt-8 flex justify-center">
-            <div className="text-xs font-bold tracking-widest uppercase text-cyan-400 px-6 py-3 border border-cyan-500/30 rounded-full">
+            <div className="text-xs font-bold tracking-widest uppercase text-emerald-400 px-6 py-3 border border-emerald-500/30 rounded-full">
               Utilisez (Ctrl+K) pour explorer l'archive complète
             </div>
         </div>
@@ -109,9 +109,9 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} 
               transition={{ delay: index * 0.05 }} viewport={{ once: true }}
               key={index} 
-              className="group flex items-center gap-2 rounded-full border border-slate-800/80 bg-slate-900/50 px-5 py-2 text-sm text-slate-300 backdrop-blur-sm transition-all hover:border-cyan-500/50 hover:bg-slate-800"
+              className="group flex items-center gap-2 rounded-full border border-slate-800/80 bg-slate-900/50 px-5 py-2 text-sm text-slate-300 backdrop-blur-sm transition-all hover:border-emerald-500/50 hover:bg-slate-800"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-cyan-500/40 group-hover:bg-cyan-400 transition-colors"></span>
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500/40 group-hover:bg-emerald-400 transition-colors"></span>
               {topic}
             </motion.div>
           ))}
@@ -126,7 +126,7 @@ export default function Home() {
             <span>© {currentYear} EPI Capital Network. Boutique Indépendante.</span>
           </div>
           <div className="flex items-center gap-8">
-            <Link href="/" className="text-xs uppercase tracking-widest text-slate-500 hover:text-cyan-400 transition-colors">
+            <Link href="/" className="text-xs uppercase tracking-widest text-slate-500 hover:text-emerald-400 transition-colors">
               Accès Privé
             </Link>
           </div>
@@ -144,11 +144,11 @@ function InsightCard({ insight }: { insight: Insight }) {
         "glass-card glass-card-hover relative overflow-hidden"
       )}>
         {/* Subtle glow effect on hover inside card */}
-        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 rounded-full bg-cyan-500/10 blur-2xl group-hover:bg-cyan-500/20 transition-colors duration-500"></div>
+        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 rounded-full bg-emerald-500/10 blur-2xl group-hover:bg-emerald-500/20 transition-colors duration-500"></div>
         
         <div className="flex items-center justify-between relative z-10">
           <span className="text-xs font-medium text-slate-500 font-mono tracking-tight">{insight.date}</span>
-          <span className="rounded-full border border-slate-700/80 bg-slate-800/80 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-cyan-400 drop-shadow-sm">
+          <span className="rounded-full border border-slate-700/80 bg-slate-800/80 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-400 drop-shadow-sm">
             {insight.tag}
           </span>
         </div>
@@ -162,9 +162,9 @@ function InsightCard({ insight }: { insight: Insight }) {
           </p>
         </div>
         
-        <div className="mt-auto pt-4 flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 transition-all group-hover:text-cyan-400 relative z-10">
+        <div className="mt-auto pt-4 flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 transition-all group-hover:text-emerald-400 relative z-10">
           Lire l'Analyse
-          <ChevronRight className="ml-2 w-4 h-4 text-slate-600 transition-all group-hover:translate-x-1 group-hover:text-cyan-400" />
+          <ChevronRight className="ml-2 w-4 h-4 text-slate-600 transition-all group-hover:translate-x-1 group-hover:text-emerald-400" />
         </div>
       </div>
     </Link>

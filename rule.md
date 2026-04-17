@@ -11,7 +11,7 @@ Ce fichier défini les règles strictes de design ("Design Intelligence") à res
 - **Fond de page** : Très sombre. Palette `slate-950` et éléments `slate-900`.
 - **Texte Principal** : `slate-300` ou `slate-200` (jamais blanc pur pour éviter l'éblouissement).
 - **Texte Secondaire** : `slate-400` ou `slate-500` (pour les dates, métadonnées, sous-titres).
-- **Accent Couleur (L'étincelle)** : `cyan-400` et `cyan-500`. Utilisé modérément pour souligner une interaction, tracer une bordure ("glow" effect), ou une icône majeure. C'est l'ADN "Deeptech".
+- **Accent Couleur (L'étincelle)** : `emerald-400` et `emerald-500`. Utilisé modérément pour souligner une interaction, tracer une bordure ("glow" effect), ou une icône majeure. C'est l'ADN "Deeptech".
 
 ## 3. Le "Glassmorphism"
 Tous les conteneurs majeurs (Cartes, bannières, modals) doivent éviter les aplats classiques. Exigences :

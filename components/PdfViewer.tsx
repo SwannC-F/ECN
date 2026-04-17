@@ -44,15 +44,15 @@ export default function DocumentPanel({ files }: PdfViewerProps) {
     <>
       <div className="w-full relative mt-4">
         <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4 flex items-center gap-2">
-          <FileText className="w-4 h-4 text-cyan-500" /> Documents de Recherche
+          <FileText className="w-4 h-4 text-emerald-500" /> Documents de Recherche
         </h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           
           {/* French Document Block */}
           {files.fr && (
-            <div className="glass-card bg-slate-900/60 p-5 rounded-xl border border-slate-800/80 group hover:border-cyan-500/30 transition-all flex flex-col justify-between h-full relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 blur-2xl group-hover:bg-cyan-500/10 transition-colors"></div>
+            <div className="glass-card bg-slate-900/60 p-5 rounded-xl border border-slate-800/80 group hover:border-emerald-500/30 transition-all flex flex-col justify-between h-full relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 blur-2xl group-hover:bg-emerald-500/10 transition-colors"></div>
               <div className="relative z-10 flex items-center gap-3 mb-6">
                 <div className="p-2 bg-slate-950 rounded-lg border border-slate-800">
                   <FileText className="w-5 h-5 text-slate-300" />
@@ -66,7 +66,7 @@ export default function DocumentPanel({ files }: PdfViewerProps) {
               <div className="relative z-10 flex gap-2 w-full">
                 <button 
                   onClick={() => handleReadClick(files.fr!)}
-                  className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 text-sm font-semibold rounded-lg transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-lg transition-colors"
                 >
                   <BookOpen className="w-4 h-4" /> Lire
                 </button>
@@ -90,8 +90,8 @@ export default function DocumentPanel({ files }: PdfViewerProps) {
 
           {/* English Document Block */}
           {files.en && (
-            <div className="glass-card bg-slate-900/60 p-5 rounded-xl border border-slate-800/80 group hover:border-cyan-500/30 transition-all flex flex-col justify-between h-full relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 blur-2xl group-hover:bg-cyan-500/10 transition-colors"></div>
+            <div className="glass-card bg-slate-900/60 p-5 rounded-xl border border-slate-800/80 group hover:border-emerald-500/30 transition-all flex flex-col justify-between h-full relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 blur-2xl group-hover:bg-emerald-500/10 transition-colors"></div>
               <div className="relative z-10 flex items-center gap-3 mb-6">
                 <div className="p-2 bg-slate-950 rounded-lg border border-slate-800">
                   <FileText className="w-5 h-5 text-slate-300" />
@@ -105,7 +105,7 @@ export default function DocumentPanel({ files }: PdfViewerProps) {
               <div className="relative z-10 flex gap-2 w-full">
                 <button 
                   onClick={() => handleReadClick(files.en!)}
-                  className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 text-sm font-semibold rounded-lg transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-lg transition-colors"
                 >
                   <BookOpen className="w-4 h-4" /> Read
                 </button>
@@ -151,7 +151,7 @@ export default function DocumentPanel({ files }: PdfViewerProps) {
               {/* Toolbar */}
               <div className="h-16 border-b border-slate-800 bg-slate-950 flex items-center justify-between px-6 shrink-0 z-20">
                 <div className="flex items-center gap-3">
-                  <Diamond className="w-5 h-5 text-cyan-500" />
+                  <Diamond className="w-5 h-5 text-emerald-500" />
                   <span className="text-sm font-serif italic text-slate-200">ECN Intelligence Reader</span>
                 </div>
                 <div className="flex items-center gap-4">
@@ -182,7 +182,7 @@ export default function DocumentPanel({ files }: PdfViewerProps) {
                   <p>Initialisation du fichier source...</p>
                   <p className="text-xs text-slate-600 max-w-xs text-center">
                     Si le visualiseur ne se charge pas, votre navigateur bloque peut-être l'affichage natif.
-                    <br/><a href={activePdfUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-500 hover:underline mt-2 inline-block">Ouvrir dans un nouvel onglet</a>
+                    <br/><a href={activePdfUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-500 hover:underline mt-2 inline-block">Ouvrir dans un nouvel onglet</a>
                   </p>
                 </div>
                 

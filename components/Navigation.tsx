@@ -58,7 +58,7 @@ export default function Navigation() {
               className="relative w-full max-w-2xl bg-slate-950 border border-slate-800 rounded-2xl shadow-[0_0_50px_-12px_rgba(34,211,238,0.15)] overflow-hidden flex flex-col z-10"
             >
               <div className="flex items-center px-4 border-b border-slate-800/80 bg-slate-900/50">
-                <Search className="w-5 h-5 text-cyan-500 shrink-0" />
+                <Search className="w-5 h-5 text-emerald-500 shrink-0" />
                 <input 
                   type="text" 
                   autoFocus
@@ -88,11 +88,11 @@ export default function Navigation() {
                         <div className="flex flex-col gap-1">
                           <h4 className="text-slate-200 font-serif text-lg group-hover:text-white transition-colors">{insight.title}</h4>
                           <div className="flex gap-3 items-center">
-                            <span className="text-[10px] text-cyan-500 uppercase tracking-widest font-bold bg-cyan-500/10 px-2 py-0.5 rounded-full">{insight.tag}</span>
+                            <span className="text-[10px] text-emerald-500 uppercase tracking-widest font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full">{insight.tag}</span>
                             <span className="text-xs text-slate-500 font-mono">{insight.date}</span>
                           </div>
                         </div>
-                        <ArrowUpRight className="w-5 h-5 text-slate-600 group-hover:text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                        <ArrowUpRight className="w-5 h-5 text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                       </Link>
                     ))
                   ) : (
@@ -116,13 +116,13 @@ export default function Navigation() {
       {/* Global Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex h-20 items-center justify-between border-b border-slate-800/50 bg-slate-950/70 px-6 backdrop-blur-xl md:px-24 transition-all duration-300">
         <Link href="/" className="group flex items-center gap-2 text-xl font-bold tracking-tighter text-slate-100 font-serif">
-          <Diamond className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+          <Diamond className="w-5 h-5 text-emerald-400 group-hover:text-emerald-300 transition-colors" />
           <span className="italic tracking-widest uppercase">ECN</span>
         </Link>
         <div className="flex gap-8 text-sm font-medium text-slate-400 font-sans">
           <button 
             onClick={() => setIsSearchOpen(true)} 
-            className="transition-colors hover:text-cyan-400 flex items-center gap-1.5 px-3 py-1.5 rounded-md hover:bg-slate-900"
+            className="transition-colors hover:text-emerald-400 flex items-center gap-1.5 px-3 py-1.5 rounded-md hover:bg-slate-900"
           >
             <Search className="w-4 h-4" />
             <span className="font-semibold hidden sm:inline">Recherche</span>

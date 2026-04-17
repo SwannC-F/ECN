@@ -29,7 +29,7 @@ export default async function ResearchPage({ params }: PageProps) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center bg-slate-950 text-slate-200">
         <h1 className="text-2xl font-bold font-serif mb-4 text-slate-100">Analyse Introuvable</h1>
-        <Link href="/" className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
+        <Link href="/" className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors">
           <ChevronLeft className="w-4 h-4" /> Retour à l'accueil
         </Link>
       </main>
@@ -40,7 +40,7 @@ export default async function ResearchPage({ params }: PageProps) {
     <main className="flex min-h-screen flex-col items-center px-6 py-24 md:px-24">
       <article className="mt-16 w-full max-w-3xl flex flex-col gap-10">
         
-        <Link href="/#analyses" className="w-max flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 transition-colors hover:text-cyan-400">
+        <Link href="/#analyses" className="w-max flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 transition-colors hover:text-emerald-400">
           <ChevronLeft className="mr-2 h-4 w-4" />
           Retour à la recherche
         </Link>
@@ -49,7 +49,7 @@ export default async function ResearchPage({ params }: PageProps) {
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500">
             <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {insight.date}</span>
             <span className="h-4 w-px bg-slate-800"></span>
-            <span className="flex items-center gap-1.5 text-cyan-400 font-bold uppercase tracking-wider bg-cyan-500/10 px-2.5 py-1 rounded-full">
+            <span className="flex items-center gap-1.5 text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 px-2.5 py-1 rounded-full">
               <Tag className="w-3.5 h-3.5" /> {insight.tag}
             </span>
           </div>
@@ -62,9 +62,9 @@ export default async function ResearchPage({ params }: PageProps) {
         {insight.pdfs ? (
           <DocumentPanel files={insight.pdfs} />
         ) : (
-          <div className="glass-card p-8 rounded-xl border border-cyan-500/30 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-500/10 blur-3xl -ml-10 -mt-10"></div>
-            <p className="text-lg font-medium text-cyan-400 relative z-10">
+          <div className="glass-card p-8 rounded-xl border border-emerald-500/30 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-32 h-32 bg-emerald-500/10 blur-3xl -ml-10 -mt-10"></div>
+            <p className="text-lg font-medium text-emerald-400 relative z-10">
               Archive complète disponible : <span className="text-white">Printemps 2026</span>
             </p>
             <p className="mt-3 text-sm text-slate-400 leading-relaxed max-w-xl mx-auto relative z-10">
