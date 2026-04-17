@@ -92,7 +92,7 @@ export default function Navigation() {
                             <span className="text-xs text-zinc-500 font-mono">{insight.date}</span>
                           </div>
                         </div>
-                        <ArrowUpRight className="w-5 h-5 text-zinc-600 group-hover:text-emerald-400 group-hover:tranzinc-x-0.5 group-hover:-tranzinc-y-0.5 transition-all" />
+                        <ArrowUpRight className="w-5 h-5 text-zinc-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                       </Link>
                     ))
                   ) : (

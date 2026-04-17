@@ -164,7 +164,7 @@ function InsightCard({ insight }: { insight: Insight }) {
         
         <div className="mt-auto pt-4 flex items-center text-xs font-bold uppercase tracking-widest text-zinc-500 transition-all group-hover:text-emerald-400 relative z-10">
           Lire l'Analyse
-          <ChevronRight className="ml-2 w-4 h-4 text-zinc-600 transition-all group-hover:tranzinc-x-1 group-hover:text-emerald-400" />
+          <ChevronRight className="ml-2 w-4 h-4 text-zinc-600 transition-all group-hover:translate-x-1 group-hover:text-emerald-400" />
         </div>
       </div>
     </Link>

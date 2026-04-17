@@ -23,7 +23,7 @@ Tous les conteneurs majeurs (Cartes, bannières, modals) doivent éviter les apl
 ## 4. Interactions & Animations
 - L'interface doit sembler **organique et réactive**. Pas d'animations brusques.
 - Toujours utiliser `framer-motion` avec des variantes de type "Fade In" ascendant (`y: 20 -> y: 0`) ou des listes en cascade (`staggerChildren`).
-- Les éléments interactifs (boutons, liens) doivent répondre au hover de manière élaborée : une icône flèche qui se décale (`group-hover:tranzinc-x-1`), ou un reflet (`glow`) qui s'allume au survol.
+- Les éléments interactifs (boutons, liens) doivent répondre au hover de manière élaborée : une icône flèche qui se décale (`group-hover:translate-x-1`), ou un reflet (`glow`) qui s'allume au survol.
 
 ## 5. Composants Minimalistes & "Command Palette"
 On refuse les formulaires et barres de texte laids et permanents.
