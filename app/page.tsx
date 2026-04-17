@@ -1,14 +1,26 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { motion, Variants } from 'framer-motion';
-import { ArrowUpRight, Diamond, BookOpen, ChevronRight, Binary } from 'lucide-react';
+import { motion, Variants, AnimatePresence } from 'framer-motion';
+import { ArrowUpRight, Diamond, BookOpen, ChevronRight, Binary, Search } from 'lucide-react';
 import { Insight, INSIGHT_MOCKS, FUTURE_TOPICS } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredInsights = useMemo(() => {
+    if (!searchQuery.trim()) return INSIGHT_MOCKS;
+    const lowerQuery = searchQuery.toLowerCase();
+    return INSIGHT_MOCKS.filter(
+      (insight) => 
+        insight.title.toLowerCase().includes(lowerQuery) ||
+        insight.excerpt.toLowerCase().includes(lowerQuery) ||
+        insight.tag.toLowerCase().includes(lowerQuery)
+    );
+  }, [searchQuery]);
 
   // Animation variants
   const fadeIn: Variants = {
@@ -76,24 +88,58 @@ export default function Home() {
       </section>
 
       {/* Latest Insights Section */}
-      <section className="flex w-full max-w-5xl flex-col gap-12 py-24">
+      <section className="flex w-full max-w-5xl flex-col gap-12 py-24 min-h-[500px]">
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
-          className="flex items-center justify-between"
+          className="flex flex-col md:flex-row md:items-center justify-between gap-6"
         >
-          <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-300">Dernières Analyses</h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-slate-800 to-transparent ml-8"></div>
+          <div className="flex items-center gap-6 flex-1">
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-300 w-max shrink-0">Dernières Analyses</h2>
+            <div className="h-px w-full max-w-sm bg-gradient-to-r from-slate-800 to-transparent"></div>
+          </div>
+          
+          {/* Search Bar */}
+          <div className="relative w-full md:w-72 shrink-0">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+            <input 
+              type="text" 
+              placeholder="Rechercher une thématique..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-slate-900/40 border border-slate-800 rounded-full pl-10 pr-4 py-2.5 text-sm text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all shadow-inner"
+            />
+          </div>
         </motion.div>
 
         <motion.div 
-          variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer} initial="hidden" animate="visible"
           className="grid grid-cols-1 gap-6 md:grid-cols-3"
         >
-          {INSIGHT_MOCKS.map((insight) => (
-            <motion.div key={insight.id} variants={fadeIn} className="h-full">
-              <InsightCard insight={insight} />
-            </motion.div>
-          ))}
+          <AnimatePresence mode="popLayout">
+            {filteredInsights.length > 0 ? (
+              filteredInsights.map((insight) => (
+                <motion.div 
+                  key={insight.id} 
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                  transition={{ duration: 0.3 }}
+                  className="h-full"
+                >
+                  <InsightCard insight={insight} />
+                </motion.div>
+              ))
+            ) : (
+              <motion.div 
+                initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                className="col-span-full py-20 text-center text-slate-500 flex flex-col items-center gap-3"
+              >
+                <Search className="w-8 h-8 text-slate-700" />
+                <p>Aucune analyse trouvée pour "{searchQuery}"</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       </section>
 
