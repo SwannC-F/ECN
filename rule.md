@@ -8,22 +8,22 @@ Ce fichier défini les règles strictes de design ("Design Intelligence") à res
 - **Sur-titres & Tags** : Majuscules (`uppercase`), espacées (`tracking-widest`), petites (`text-xs` ou `text-[10px]`), avec des polices `font-bold` ou `font-mono`.
 
 ## 2. Palette de Couleurs "Tech Capital"
-- **Fond de page** : Très sombre. Palette `slate-950` et éléments `slate-900`.
-- **Texte Principal** : `slate-300` ou `slate-200` (jamais blanc pur pour éviter l'éblouissement).
-- **Texte Secondaire** : `slate-400` ou `slate-500` (pour les dates, métadonnées, sous-titres).
+- **Fond de page** : Très sombre. Palette `zinc-950` et éléments `zinc-900`.
+- **Texte Principal** : `zinc-300` ou `zinc-200` (jamais blanc pur pour éviter l'éblouissement).
+- **Texte Secondaire** : `zinc-400` ou `zinc-500` (pour les dates, métadonnées, sous-titres).
 - **Accent Couleur (L'étincelle)** : `emerald-400` et `emerald-500`. Utilisé modérément pour souligner une interaction, tracer une bordure ("glow" effect), ou une icône majeure. C'est l'ADN "Deeptech".
 
 ## 3. Le "Glassmorphism"
 Tous les conteneurs majeurs (Cartes, bannières, modals) doivent éviter les aplats classiques. Exigences :
-- Les fonds doivent être semi-transparents : ex. `bg-slate-900/50`.
-- Les bordures doivent être très subtiles : ex. `border-slate-800/50`.
+- Les fonds doivent être semi-transparents : ex. `bg-zinc-900/50`.
+- Les bordures doivent être très subtiles : ex. `border-zinc-800/50`.
 - Utiliser la classe maison globale `.glass-card` et `.glass-card-hover` (définies dans `globals.css`).
 - Toujours incorporer un flou arrière (`backdrop-blur-md` ou `backdrop-blur-xl`) sur les éléments flottants (Navbar, Modales).
 
 ## 4. Interactions & Animations
 - L'interface doit sembler **organique et réactive**. Pas d'animations brusques.
 - Toujours utiliser `framer-motion` avec des variantes de type "Fade In" ascendant (`y: 20 -> y: 0`) ou des listes en cascade (`staggerChildren`).
-- Les éléments interactifs (boutons, liens) doivent répondre au hover de manière élaborée : une icône flèche qui se décale (`group-hover:translate-x-1`), ou un reflet (`glow`) qui s'allume au survol.
+- Les éléments interactifs (boutons, liens) doivent répondre au hover de manière élaborée : une icône flèche qui se décale (`group-hover:tranzinc-x-1`), ou un reflet (`glow`) qui s'allume au survol.
 
 ## 5. Composants Minimalistes & "Command Palette"
 On refuse les formulaires et barres de texte laids et permanents.

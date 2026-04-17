@@ -33,15 +33,15 @@ export default function Home() {
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
             Independent Deeptech Boutique
           </div>
-          <h1 className="text-5xl font-serif font-semibold tracking-tight text-slate-50 md:text-7xl leading-tight">
+          <h1 className="text-5xl font-serif font-semibold tracking-tight text-zinc-50 md:text-7xl leading-tight">
             ECN Research <br />
-            <span className="text-slate-500 font-sans font-light tracking-tighter">Technology Capital.</span>
+            <span className="text-zinc-500 font-sans font-light tracking-tighter">Technology Capital.</span>
           </h1>
-          <p className="max-w-2xl text-lg text-slate-400 md:text-xl mt-6 font-light leading-relaxed">
+          <p className="max-w-2xl text-lg text-zinc-400 md:text-xl mt-6 font-light leading-relaxed">
             Intelligence technologique & données qualitatives exhaustives pour le financement en Private Equity (Growth & LBO).
           </p>
           <div className="mt-8 flex gap-4">
-            <Link href="#analyses" className="flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-950 bg-emerald-400 hover:bg-emerald-300 px-6 py-3 rounded-full transition-colors">
+            <Link href="#analyses" className="flex items-center gap-2 text-sm font-semibold tracking-wide text-zinc-950 bg-emerald-400 hover:bg-emerald-300 px-6 py-3 rounded-full transition-colors">
               Parcourir nos analyses
             </Link>
           </div>
@@ -58,9 +58,9 @@ export default function Home() {
           <h2 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-emerald-400 flex items-center gap-2">
             <Binary className="w-4 h-4" /> Notre Thèse
           </h2>
-          <p className="max-w-4xl text-2xl font-light leading-relaxed text-slate-300 md:text-4xl font-serif">
+          <p className="max-w-4xl text-2xl font-light leading-relaxed text-zinc-300 md:text-4xl font-serif">
             L'asymétrie d'information entre l'innovation technique et l'allocation de capital 
-            financier reste le principal frein à l'efficacité du Private Equity. <span className="text-white font-normal bg-gradient-to-r from-slate-100 to-slate-400 bg-clip-text text-transparent">ECN comble ce fossé</span> par une recherche indépendante 
+            financier reste le principal frein à l'efficacité du Private Equity. <span className="text-white font-normal bg-gradient-to-r from-zinc-100 to-zinc-400 bg-clip-text text-transparent">ECN comble ce fossé</span> par une recherche indépendante 
             rigoureuse, mêlant expertise sectorielle et modélisation pointue.
           </p>
         </motion.div>
@@ -73,8 +73,8 @@ export default function Home() {
           className="flex flex-col md:flex-row md:items-center justify-between gap-6"
         >
           <div className="flex items-center gap-6 flex-1">
-            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-300 w-max shrink-0">Dernières Analyses</h2>
-            <div className="h-px w-full max-w-sm bg-gradient-to-r from-slate-800 to-transparent"></div>
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-300 w-max shrink-0">Dernières Analyses</h2>
+            <div className="h-px w-full max-w-sm bg-gradient-to-r from-zinc-800 to-transparent"></div>
           </div>
         </motion.div>
 
@@ -101,15 +101,15 @@ export default function Home() {
       </section>
 
       {/* Section 'Sujets à l'étude' */}
-      <section className="flex w-full max-w-5xl flex-col gap-8 py-20 border-t border-slate-800/50">
-        <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Sujets à l'étude (Futures Analyses)</h2>
+      <section className="flex w-full max-w-5xl flex-col gap-8 py-20 border-t border-zinc-800/50">
+        <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">Sujets à l'étude (Futures Analyses)</h2>
         <div className="flex flex-wrap gap-3">
           {FUTURE_TOPICS.map((topic, index) => (
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} 
               transition={{ delay: index * 0.05 }} viewport={{ once: true }}
               key={index} 
-              className="group flex items-center gap-2 rounded-full border border-slate-800/80 bg-slate-900/50 px-5 py-2 text-sm text-slate-300 backdrop-blur-sm transition-all hover:border-emerald-500/50 hover:bg-slate-800"
+              className="group flex items-center gap-2 rounded-full border border-zinc-800/80 bg-zinc-900/50 px-5 py-2 text-sm text-zinc-300 backdrop-blur-sm transition-all hover:border-emerald-500/50 hover:bg-zinc-800"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500/40 group-hover:bg-emerald-400 transition-colors"></span>
               {topic}
@@ -119,14 +119,14 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="mt-auto w-full max-w-5xl border-t border-slate-800/50 py-12 text-sm text-slate-500">
+      <footer className="mt-auto w-full max-w-5xl border-t border-zinc-800/50 py-12 text-sm text-zinc-500">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
           <div className="flex items-center gap-2">
-            <Diamond className="w-4 h-4 text-slate-700" />
+            <Diamond className="w-4 h-4 text-zinc-700" />
             <span>© {currentYear} EPI Capital Network. Boutique Indépendante.</span>
           </div>
           <div className="flex items-center gap-8">
-            <Link href="/" className="text-xs uppercase tracking-widest text-slate-500 hover:text-emerald-400 transition-colors">
+            <Link href="/" className="text-xs uppercase tracking-widest text-zinc-500 hover:text-emerald-400 transition-colors">
               Accès Privé
             </Link>
           </div>
@@ -147,24 +147,24 @@ function InsightCard({ insight }: { insight: Insight }) {
         <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 rounded-full bg-emerald-500/10 blur-2xl group-hover:bg-emerald-500/20 transition-colors duration-500"></div>
         
         <div className="flex items-center justify-between relative z-10">
-          <span className="text-xs font-medium text-slate-500 font-mono tracking-tight">{insight.date}</span>
-          <span className="rounded-full border border-slate-700/80 bg-slate-800/80 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-400 drop-shadow-sm">
+          <span className="text-xs font-medium text-zinc-500 font-mono tracking-tight">{insight.date}</span>
+          <span className="rounded-full border border-zinc-700/80 bg-zinc-800/80 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-400 drop-shadow-sm">
             {insight.tag}
           </span>
         </div>
         
         <div className="relative z-10 flex-1">
-          <h3 className="mb-4 text-xl font-serif font-semibold leading-snug text-slate-200 transition-colors group-hover:text-white">
+          <h3 className="mb-4 text-xl font-serif font-semibold leading-snug text-zinc-200 transition-colors group-hover:text-white">
             {insight.title}
           </h3>
-          <p className="text-sm text-slate-400 line-clamp-3 leading-relaxed">
+          <p className="text-sm text-zinc-400 line-clamp-3 leading-relaxed">
             {insight.excerpt}
           </p>
         </div>
         
-        <div className="mt-auto pt-4 flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 transition-all group-hover:text-emerald-400 relative z-10">
+        <div className="mt-auto pt-4 flex items-center text-xs font-bold uppercase tracking-widest text-zinc-500 transition-all group-hover:text-emerald-400 relative z-10">
           Lire l'Analyse
-          <ChevronRight className="ml-2 w-4 h-4 text-slate-600 transition-all group-hover:translate-x-1 group-hover:text-emerald-400" />
+          <ChevronRight className="ml-2 w-4 h-4 text-zinc-600 transition-all group-hover:tranzinc-x-1 group-hover:text-emerald-400" />
         </div>
       </div>
     </Link>
