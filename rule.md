@@ -1,6 +1,6 @@
 # ECN Research - UI/UX Design System "Pro Max"
 
-Ce fichier défini les règles strictes de design ("Design Intelligence") à respecter lors de la création ou modification des pages et composants de l'application ECN. L'objectif est de projeter l'image d'une **Boutique de Recherche Institutionnelle (Private Equity & Deeptech)**, mêlant rigueur financière et avant-gardisme technologique.
+Ce fichier défini les règles strictes de design ("Design Intelligence") à respecter lors de la création ou modification des pages et composants de l'application ECN. L'objectif est de projeter l'image d'une **Boutique de Recherche Institutionnelle (Private Equity & Tech)**, mêlant rigueur financière et avant-gardisme technologique.
 
 ## 1. Typographie
 - **Titres Principaux (Hero, Article Titles)** : `font-serif` (Playfair Display). Confère un aspect éditorial, luxueux et rassurant (style Wall Street Journal / Boutique tier-1).
@@ -11,7 +11,7 @@ Ce fichier défini les règles strictes de design ("Design Intelligence") à res
 - **Fond de page** : Très sombre. Palette `zinc-950` et éléments `zinc-900`.
 - **Texte Principal** : `zinc-300` ou `zinc-200` (jamais blanc pur pour éviter l'éblouissement).
 - **Texte Secondaire** : `zinc-400` ou `zinc-500` (pour les dates, métadonnées, sous-titres).
-- **Accent Couleur (L'étincelle)** : `emerald-400` et `emerald-500`. Utilisé modérément pour souligner une interaction, tracer une bordure ("glow" effect), ou une icône majeure. C'est l'ADN "Deeptech".
+- **Accent Couleur (L'étincelle)** : `emerald-400` et `emerald-500`. Utilisé modérément pour souligner une interaction, tracer une bordure ("glow" effect), ou une icône majeure. C'est l'ADN "Tech".
 
 ## 3. Le "Glassmorphism"
 Tous les conteneurs majeurs (Cartes, bannières, modals) doivent éviter les aplats classiques. Exigences :

@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "ECN | Intelligence Technologique pour le Capital Privé",
-  description: "Boutique de Recherche et d'Analyse Deeptech & Private Equity.",
+  description: "Boutique de Recherche et d'Analyse Tech & Private Equity.",
 };
 
 export default function RootLayout({

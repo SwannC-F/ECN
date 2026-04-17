@@ -31,7 +31,7 @@ export default function Home() {
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
           <div className="mb-6 inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400 backdrop-blur-sm">
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
-            Independent Deeptech Boutique
+            Independent Tech Boutique
           </div>
           <h1 className="text-5xl font-serif font-semibold tracking-tight text-zinc-50 md:text-7xl leading-tight">
             ECN Research <br />
