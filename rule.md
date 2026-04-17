@@ -43,5 +43,6 @@ Afin de préserver le "Design Intelligence" jusqu'au bout, on refuse de forcer l
 ## 8. Authentification & Base de Données (Stack Backend)
 Afin de garantir un standard institutionnel sur les interactions :
 - **Authentification (NextAuth)** : Les commentaires et avis sont strictement réservés aux utilisateurs authentifiés via **LinkedIn**. Aucun système de mot de passe interne ou d'anonymat n'est autorisé. Le fichier de référence est `lib/auth.ts`.
+- **Confidentialité LinkedIn (Profils)** : L'API LinkedIn (OIDC v2) interdit la récupération de l'URL directe du profil d'un utilisateur. En contournement ("Design Intelligence"), le nom de l'utilisateur affiché sur son avis est transformé en lien de recherche globale LinkedIn (`https://www.linkedin.com/search/results/people/?keywords=...`).
 - **Base de Données (Vercel Postgres + Prisma)** : Les données utilisateurs et les avis (`Review`) sont gérés via le schéma `prisma/schema.prisma`. 
 - **Déploiement Automatisé** : Le fichier `package.json` est configuré avec un script de build combiné (`prisma generate && prisma db push && next build`) assurant que Vercel synchronise la base de données automatiquement à chaque publication.
