@@ -32,4 +32,10 @@ La recherche doit être centralisée dans une "Command Palette" modale flottante
 ## 6. Icônes
 Utiliser `lucide-react` avec des tracés fins (default `strokeWidth={2}`). Toujours les associer harmonieusement avec des étiquettes texte (ex: `<Search className="w-4 h-4"/> Recherche`).
 
+## 7. Gestion des Rapports PDF (La Liseuse)
+Afin de préserver le "Design Intelligence" jusqu'au bout, on refuse de forcer le téléchargement des PDF dans des onglets inesthétiques par défaut.
+- **Workflow CMS** : Les PDFs finaux (FR et EN) doivent être déposés dans le dossier `/public/reports/`.
+- **Intégration Data** : Ils doivent être référencés dans `lib/data.ts` dans la clé `pdfs: { fr: "...", en: "..." }`.
+- **Expérience de Lecture (UX)** : L'interface gère automatiquement l'outil de lecture intelligent. Si le client est sur Ordinateur (`isMobile: false`), la lecture s'incruste en plein écran via une "Modale Liseuse" sans quitter l'App. S'il est sur Mobile, on utilise une ouverture d'onglet natif pour laisser le téléphone s'en charger confortablement. Les téléchargements forcent l'usage de l'attribut natif `download`.
+
 *Toute nouvelle intégration doit se soumettre à ce cahier des charges "Pro Max".*
