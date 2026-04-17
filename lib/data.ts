@@ -31,6 +31,10 @@ export const INSIGHT_MOCKS: Insight[] = [
     tag: "Cybersécurité",
     excerpt: "Étude des opportunités de 'Build-up' dans un marché fragmenté en quête de rentabilité.",
     slug: "consolidation-cyber-b2b",
+    pdfs: {
+      fr: "/reports/consolidation-cyber-b2b-fr.pdf",
+      en: "/reports/consolidation-cyber-b2b-en.pdf"
+    }
   },
   {
     id: "3",
@@ -39,6 +43,10 @@ export const INSIGHT_MOCKS: Insight[] = [
     tag: "SaaS Enterprise",
     excerpt: "Comment l'intégration de l'IA générative dans les ERP transforme les plans de création de valeur.",
     slug: "automatisation-erp-lbo",
+    pdfs: {
+      fr: "/reports/automatisation-erp-fr.pdf",
+      en: "/reports/automatisation-erp-en.pdf"
+    }
   },
 ];
 
