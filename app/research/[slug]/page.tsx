@@ -5,6 +5,9 @@ import { INSIGHT_MOCKS } from '@/lib/data';
 import { Calendar, Tag, ChevronLeft } from 'lucide-react';
 import DocumentPanel from '@/components/PdfViewer';
 import ReviewSection from '@/components/ReviewSection';
+import PdfLoginGate from '@/components/PdfLoginGate';
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/lib/auth";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -25,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function ResearchPage({ params }: PageProps) {
   const { slug } = await params;
   const insight = INSIGHT_MOCKS.find(i => i.slug === slug);
+  const session = await getServerSession(authOptions);
 
   if (!insight) {
     return (
@@ -61,7 +65,11 @@ export default async function ResearchPage({ params }: PageProps) {
 
         {/* Dynamic Document Panel */}
         {insight.pdfs ? (
-          <DocumentPanel files={insight.pdfs} />
+          session ? (
+            <DocumentPanel files={insight.pdfs} />
+          ) : (
+            <PdfLoginGate />
+          )
         ) : (
           <div className="glass-card p-8 rounded-xl border border-emerald-500/30 text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-32 h-32 bg-emerald-500/10 blur-3xl -ml-10 -mt-10"></div>
