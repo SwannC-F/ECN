@@ -55,7 +55,7 @@ export default function Navigation() {
               animate={{ opacity: 1, scale: 1, y: 0 }} 
               exit={{ opacity: 0, scale: 0.97, y: -5 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-2xl bg-zinc-950 border border-zinc-800 rounded-2xl shadow-[0_0_50px_-12px_rgba(34,211,238,0.15)] overflow-hidden flex flex-col z-10"
+              className="relative w-full max-w-2xl bg-zinc-950 border border-zinc-800 rounded-2xl shadow-[0_0_50px_-12px_rgba(52,211,153,0.15)] overflow-hidden flex flex-col z-10"
             >
               <div className="flex items-center px-4 border-b border-zinc-800/80 bg-zinc-900/50">
                 <Search className="w-5 h-5 text-emerald-500 shrink-0" />
