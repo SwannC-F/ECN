@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { INSIGHT_MOCKS } from '@/lib/data';
 import { Calendar, Tag, ChevronLeft } from 'lucide-react';
 import DocumentPanel from '@/components/PdfViewer';
+import ReviewSection from '@/components/ReviewSection';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -83,6 +84,9 @@ export default async function ResearchPage({ params }: PageProps) {
             En traitant ce sujet par le prisme combiné de la maturité technologique et du cycle d'investissement, ECN Research fournit un cadre d'analyse décisionnel asymétrique et exclusif.
           </p>
         </div>
+
+        {/* Section Avis */}
+        <ReviewSection postSlug={slug} />
       </article>
     </main>
   );

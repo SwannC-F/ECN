@@ -39,3 +39,9 @@ Afin de préserver le "Design Intelligence" jusqu'au bout, on refuse de forcer l
 - **Expérience de Lecture (UX)** : L'interface gère automatiquement l'outil de lecture intelligent. Si le client est sur Ordinateur (`isMobile: false`), la lecture s'incruste en plein écran via une "Modale Liseuse" sans quitter l'App. S'il est sur Mobile, on utilise une ouverture d'onglet natif pour laisser le téléphone s'en charger confortablement. Les téléchargements forcent l'usage de l'attribut natif `download`.
 
 *Toute nouvelle intégration doit se soumettre à ce cahier des charges "Pro Max".*
+
+## 8. Authentification & Base de Données (Stack Backend)
+Afin de garantir un standard institutionnel sur les interactions :
+- **Authentification (NextAuth)** : Les commentaires et avis sont strictement réservés aux utilisateurs authentifiés via **LinkedIn**. Aucun système de mot de passe interne ou d'anonymat n'est autorisé. Le fichier de référence est `lib/auth.ts`.
+- **Base de Données (Vercel Postgres + Prisma)** : Les données utilisateurs et les avis (`Review`) sont gérés via le schéma `prisma/schema.prisma`. 
+- **Déploiement Automatisé** : Le fichier `package.json` est configuré avec un script de build combiné (`prisma generate && prisma db push && next build`) assurant que Vercel synchronise la base de données automatiquement à chaque publication.
