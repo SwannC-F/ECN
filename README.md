@@ -12,9 +12,9 @@ Plateforme institutionnelle de recherche et d'analyse pour le Private Equity & D
 
 ## Fonctionnalités Principales
 - **Design Intelligence** : UI/UX minimaliste "Glassmorphism" avec teintes Zinc/Emerald, typographie Serif (Playfair Display) et Sans (Inter).
-- **Liseuse Intégrée** : Affichage natif ou modale pleine page des rapports PDF.
-- **Système d'Avis Premium & Gating** : Authentification stricte via LinkedIn (SSO) pour garantir la qualité et l'identité institutionnelle des commentaires sur les rapports de recherche, et pour restreindre l'accès à la "Data Room" (PDF).
-- **CRM Back-Office (Lead Generation)** : Un tableau de bord administrateur sécurisé (`/admin`) permettant de tracker les lectures ("Unlocks") et d'exporter les leads qualifiés (CSV) pour le Deal Sourcing.
+- **Liseuse Intégrée** : Affichage natif ou modale pleine page supportant les formats **A4 Vertical** (Investment Memo) et **16:9 Horizontal** (Technical Deep Dive).
+- **Système d'Avis Premium & Gating** : Authentification stricte via LinkedIn (SSO) pour restreindre l'accès à la "Data Room" et garantir l'identité institutionnelle des interactions.
+- **CRM Back-Office (Lead Generation)** : Un tableau de bord administrateur sécurisé (`/admin`) permettant de tracker les lectures ("Unlocks") et d'exporter les leads qualifiés (CSV).
 
 ## Installation & Lancement en local
 
