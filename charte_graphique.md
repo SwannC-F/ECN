@@ -2,10 +2,20 @@
 
 Ce document définit les standards visuels stricts pour la création des rapports de recherche (Deep Dives) au format PDF. L'objectif est d'atteindre un niveau de finition équivalent aux grandes boutiques institutionnelles (McKinsey, BCG, KKR).
 
-## 1. Philosophie Visuelle & Format
-- **Le Format** : Tous les rapports doivent être au format **A4 Vertical (Portrait)**. L'objectif est de produire un véritable "Livre Blanc" (Whitepaper) dense et éditorial, à l'image des rapports McKinsey ou BCG, et **non pas** un deck de présentation horizontal (Slideument).
-- **Minimalisme Clinique** : Aucun élément décoratif inutile. Chaque pixel doit servir la donnée ou la lisibilité.
-- **Contraste & Hiérarchie** : Le regard du lecteur (Partner PE) doit être guidé instantanément vers les chiffres clés et l'Executive Summary.
+## 1. Philosophie Visuelle & Formats
+ECN propose deux types de livrables distincts, adaptés à deux audiences et deux moments du cycle de décision :
+
+### A. L'Investment Memo (IM) - Format A4 Vertical
+- **Usage** : Le "Teaser" d'accroche pour les Partners. Lecture rapide (3 min), souvent sur iPad ou mobile.
+- **Format** : **A4 Portrait**.
+- **Contenu** : Macro-vision, Bridge EBITDA, ROI estimé. Très aéré, impact visuel maximal.
+
+### B. Le Deep Dive (Data Room) - Format 16:9 Horizontal
+- **Usage** : La "Preuve" pour la Deal Team et les CTOs. Analyse technique profonde, lecture sur double écran de bureau.
+- **Format** : **16:9 Paysage** (optimisé pour le partage d'écran et la densité de données).
+- **Contenu** : Modélisations P&L détaillées, courbes techniques, calculs granulaires. Accompagné systématiquement d'un modèle Excel.
+
+## 2. Minimalisme Clinique
 
 ## 2. Typographie
 Les rapports doivent utiliser exclusivement deux familles de polices pour faire le pont entre la rigueur (Serif) et la modernité (Sans-Serif).

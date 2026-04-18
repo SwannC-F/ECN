@@ -11,14 +11,23 @@ L'objectif est de créer un écosystème symbiotique où :
 
 L'offre de contenu d'ECN est structurée pour alimenter ce réseau via trois formats distincts :
 
-### 1. Les Analyses (Deep Dives)
-Le cœur de la réactivité technique. Ce sont des thèses de recherche massives et exhaustives au format **A4 Vertical (Whitepaper / Style McKinsey)**.
-- **Format** : Executive Summary public + Data Room (PDF lourd et modélisation financière) sous accès restreint (LinkedIn Auth).
-- **Cible** : Deal Sourcing, aide à la décision pour des audits ou des rachats.
+### 1. L'Investment Memo (A4 - L'Accroche)
+C'est le "Teaser" destiné aux Partners. 
+- **Objectif** : Créer la conviction et l'urgence en 3 minutes.
+- **Format** : A4 Vertical (Portrait), 10 pages maximum.
+- **Contenu** : Thèse macro, bridge EBITDA, Red Flags majeurs et ROI global.
+- **Action** : Le Partner le transfère à sa Deal Team pour audit.
 
-### 2. Les News (Semi-Deep Dives)
-La capacité d'ECN à réagir à chaud sur l'actualité du marché, avec toujours un angle "Tech & PE".
-- **Format** : Articles plus courts. Une entreprise fait faillite, lève des fonds, ou une nouvelle architecture devient le standard ? ECN réagit rapidement en apportant une vision analytique et chiffrée.
+### 2. Le Deep Dive & Excel (16:9 - La Preuve)
+C'est la "Data Room" destinée aux Associates, Analysts et CTOs.
+- **Objectif** : Survivre au stress-test technique et financier.
+- **Format** : 16:9 Horizontal (Paysage) + Modèle Excel détaillé.
+- **Contenu** : Granularité technique totale, courbes de dépréciation, P&L sur 5 ans.
+- **Action** : Validation des hypothèses par la Deal Team pour confirmation du deal.
+
+### 3. Les News (Semi-Deep Dives)
+La réactivité d'ECN sur l'actualité du marché.
+- **Format** : Articles courts et incisifs ("Signaux Faibles").
 - **Cible** : Maintenir l'attention du réseau au quotidien et prouver l'expertise continue (les "Signaux Faibles").
 
 ### 3. Les Interviews (À terme)

@@ -14,7 +14,7 @@ Ce document centralise les prochaines grandes fonctionnalités à développer po
 
 ## 🟡 Phase 2 : Module "Ask ECN" (IA RAG sur les Data Rooms)
 
-**Objectif** : Permettre aux analystes d'interroger directement la thèse de recherche (format **A4 Vertical**) de 50 pages via une IA spécialisée.
+**Objectif** : Permettre aux analystes d'interroger directement l'Investment Memo (A4) et le Deep Dive (16:9) via une IA spécialisée.
 
 - [ ] Intégrer un module de Chatbot contextuel (Design minimaliste).
 - [ ] Vectoriser les PDF de recherche (Embeddings) pour créer une base de connaissances propriétaire.
