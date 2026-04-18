@@ -40,9 +40,9 @@ Afin de préserver le "Design Intelligence" jusqu'au bout, on refuse de forcer l
 
 *Toute nouvelle intégration doit se soumettre à ce cahier des charges "Pro Max".*
 
-## 8. Authentification & Base de Données (Stack Backend)
+## 8. Authentification, Base de Données & CRM
 Afin de garantir un standard institutionnel sur les interactions :
-- **Authentification (NextAuth)** : Les commentaires et avis sont strictement réservés aux utilisateurs authentifiés via **LinkedIn**. Aucun système de mot de passe interne ou d'anonymat n'est autorisé. Le fichier de référence est `lib/auth.ts`.
-- **Confidentialité LinkedIn (Profils)** : L'API LinkedIn (OIDC v2) interdit la récupération de l'URL directe du profil d'un utilisateur. En contournement ("Design Intelligence"), le nom de l'utilisateur affiché sur son avis est transformé en lien de recherche globale LinkedIn (`https://www.linkedin.com/search/results/people/?keywords=...`).
-- **Base de Données (Vercel Postgres + Prisma)** : Les données utilisateurs et les avis (`Review`) sont gérés via le schéma `prisma/schema.prisma`. 
+- **Authentification (NextAuth)** : Les commentaires et accès aux Data Rooms sont réservés aux utilisateurs connectés via **LinkedIn**. L'administrateur système (Swann) est reconnu automatiquement via son email LinkedIn pour l'accès au CRM.
+- **Confidentialité LinkedIn (Profils)** : L'API LinkedIn (OIDC v2) interdit la récupération de l'URL directe du profil d'un utilisateur. En contournement ("Design Intelligence"), le nom de l'utilisateur affiché sur son avis est transformé en lien de recherche globale LinkedIn.
+- **Tracking & CRM (Back-Office)** : La base de données (Prisma) traque chaque déblocage de rapport (`Unlock`). Un back-office sécurisé `/admin` permet d'exporter ces leads (fichiers CSV) pour un suivi commercial (Deal Sourcing).
 - **Déploiement Automatisé** : Le fichier `package.json` est configuré avec un script de build combiné (`prisma generate && prisma db push && next build`) assurant que Vercel synchronise la base de données automatiquement à chaque publication.

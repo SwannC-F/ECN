@@ -43,11 +43,25 @@ model User {
   email         String?   @unique
   emailVerified DateTime? @map("email_verified")
   image         String?
+  role          String    @default("USER")
   accounts      Account[]
   sessions      Session[]
   reviews       Review[]
+  unlocks       Unlock[]
 
   @@map("users")
+}
+
+model Unlock {
+  id        String   @id @default(cuid())
+  postSlug  String   @map("post_slug")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, postSlug])
+  @@map("unlocks")
 }
 
 model VerificationToken {

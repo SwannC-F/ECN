@@ -8,6 +8,7 @@ import ReviewSection from '@/components/ReviewSection';
 import PdfLoginGate from '@/components/PdfLoginGate';
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -29,6 +30,31 @@ export default async function ResearchPage({ params }: PageProps) {
   const { slug } = await params;
   const insight = INSIGHT_MOCKS.find(i => i.slug === slug);
   const session = await getServerSession(authOptions);
+
+  if (session?.user?.email && insight?.pdfs) {
+    try {
+      const user = await prisma.user.findUnique({
+        where: { email: session.user.email }
+      });
+      if (user) {
+        await prisma.unlock.upsert({
+          where: {
+            userId_postSlug: {
+              userId: user.id,
+              postSlug: slug
+            }
+          },
+          update: {},
+          create: {
+            userId: user.id,
+            postSlug: slug
+          }
+        });
+      }
+    } catch (e) {
+      console.error("Erreur tracking unlock", e);
+    }
+  }
 
   if (!insight) {
     return (
