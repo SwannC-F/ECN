@@ -7,9 +7,10 @@ import { cn } from '@/lib/utils';
 
 interface PdfViewerProps {
   files: { fr?: string; en?: string };
+  deepDive?: string;
 }
 
-export default function DocumentPanel({ files }: PdfViewerProps) {
+export default function DocumentPanel({ files, deepDive }: PdfViewerProps) {
   const [activePdfUrl, setActivePdfUrl] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [downloadedStatus, setDownloadedStatus] = useState<string | null>(null);
@@ -128,6 +129,61 @@ export default function DocumentPanel({ files }: PdfViewerProps) {
           )}
 
         </div>
+
+        {/* Deep Dive / Data Room Section */}
+        {deepDive && (
+          <div className="mt-8">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-4 flex items-center gap-2">
+              <Diamond className="w-4 h-4 text-emerald-500" /> Data Room : Deep Dive & Modélisation
+            </h3>
+            
+            <div className="glass-card bg-zinc-900/40 p-6 rounded-xl border border-emerald-500/20 group hover:border-emerald-500/40 transition-all relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 blur-3xl group-hover:bg-emerald-500/10 transition-colors"></div>
+              
+              <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-zinc-950 rounded-xl border border-zinc-800 shrink-0">
+                    <Monitor className="w-6 h-6 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-serif font-semibold text-zinc-100 flex items-center gap-2">
+                      Technical Deep Dive
+                      <span className="text-[10px] bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded uppercase tracking-tighter font-sans">16:9 Format</span>
+                    </h4>
+                    <p className="text-sm text-zinc-400 mt-1 max-w-md leading-relaxed">
+                      Analyse granulaire destinée aux Deal Teams et CTOs. Inclut les modélisations P&L détaillées et le stress-test des hypothèses.
+                    </p>
+                    <div className="flex items-center gap-3 mt-3 text-[10px] font-mono text-zinc-500">
+                      <span className="bg-zinc-800 px-2 py-0.5 rounded text-zinc-300">English Only</span>
+                      <span className="flex items-center gap-1"><FileText className="w-3 h-3" /> Data-Room Pack</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 shrink-0">
+                  <button 
+                    onClick={() => handleReadClick(deepDive)}
+                    className="flex items-center gap-2 py-2.5 px-6 bg-emerald-500 text-zinc-950 text-sm font-bold rounded-lg hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/10"
+                  >
+                    <BookOpen className="w-4 h-4" /> Open Data Room
+                  </button>
+                  <a 
+                    href={deepDive} 
+                    download 
+                    className="p-2.5 bg-zinc-950 text-zinc-400 border border-zinc-800 rounded-lg hover:text-white hover:border-zinc-600 transition-all"
+                    title="Download PDF"
+                  >
+                    <Download className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <p className="text-[10px] text-zinc-600 mt-3 italic">
+              * Note : Le modèle Excel associé est disponible sur demande directe pour les partenaires institutionnels authentifiés.
+            </p>
+          </div>
+        )}
         
         {/* Device hints */}
         {isMobile && (

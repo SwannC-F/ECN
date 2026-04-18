@@ -92,7 +92,7 @@ export default async function ResearchPage({ params }: PageProps) {
         {/* Dynamic Document Panel */}
         {insight.pdfs ? (
           session ? (
-            <DocumentPanel files={insight.pdfs} />
+            <DocumentPanel files={insight.pdfs || {}} deepDive={insight.deepDive} />
           ) : (
             <PdfLoginGate />
           )

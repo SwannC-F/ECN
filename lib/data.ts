@@ -9,6 +9,7 @@ export interface Insight {
     fr?: string;
     en?: string;
   };
+  deepDive?: string;
 }
 
 export const INSIGHT_MOCKS: Insight[] = [
@@ -22,7 +23,8 @@ export const INSIGHT_MOCKS: Insight[] = [
     pdfs: {
       fr: "/reports/infrastructure-data-center-fr.pdf",
       en: "/reports/infrastructure-data-center-en.pdf"
-    }
+    },
+    deepDive: "/reports/infrastructure-data-center-deep-dive.pdf"
   },
   {
     id: "2",
@@ -34,7 +36,8 @@ export const INSIGHT_MOCKS: Insight[] = [
     pdfs: {
       fr: "/reports/consolidation-cyber-b2b-fr.pdf",
       en: "/reports/consolidation-cyber-b2b-en.pdf"
-    }
+    },
+    deepDive: "/reports/consolidation-cyber-b2b-deep-dive.pdf"
   },
   {
     id: "3",
@@ -46,7 +49,8 @@ export const INSIGHT_MOCKS: Insight[] = [
     pdfs: {
       fr: "/reports/automatisation-erp-fr.pdf",
       en: "/reports/automatisation-erp-en.pdf"
-    }
+    },
+    deepDive: "/reports/automatisation-erp-deep-dive.pdf"
   },
 ];
 
