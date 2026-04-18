@@ -2,7 +2,8 @@
 
 Ce document définit les standards visuels stricts pour la création des rapports de recherche (Deep Dives) au format PDF. L'objectif est d'atteindre un niveau de finition équivalent aux grandes boutiques institutionnelles (McKinsey, BCG, KKR).
 
-## 1. Philosophie Visuelle
+## 1. Philosophie Visuelle & Format
+- **Le Format** : Tous les rapports doivent être au format **A4 Vertical (Portrait)**. L'objectif est de produire un véritable "Livre Blanc" (Whitepaper) dense et éditorial, à l'image des rapports McKinsey ou BCG, et **non pas** un deck de présentation horizontal (Slideument).
 - **Minimalisme Clinique** : Aucun élément décoratif inutile. Chaque pixel doit servir la donnée ou la lisibilité.
 - **Contraste & Hiérarchie** : Le regard du lecteur (Partner PE) doit être guidé instantanément vers les chiffres clés et l'Executive Summary.
 

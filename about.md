@@ -12,7 +12,7 @@ L'objectif est de créer un écosystème symbiotique où :
 L'offre de contenu d'ECN est structurée pour alimenter ce réseau via trois formats distincts :
 
 ### 1. Les Analyses (Deep Dives)
-Le cœur de la réactivité technique. Ce sont des thèses de recherche massives et exhaustives (ex: le *Proof of Concept* sur le Cloud Repatriation). 
+Le cœur de la réactivité technique. Ce sont des thèses de recherche massives et exhaustives au format **A4 Vertical (Whitepaper / Style McKinsey)**.
 - **Format** : Executive Summary public + Data Room (PDF lourd et modélisation financière) sous accès restreint (LinkedIn Auth).
 - **Cible** : Deal Sourcing, aide à la décision pour des audits ou des rachats.
 
